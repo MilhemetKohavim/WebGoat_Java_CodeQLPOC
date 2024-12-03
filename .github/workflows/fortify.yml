@@ -72,8 +72,10 @@ jobs:
           # DO_EXPORT: true                                # Export SAST results to GitHub code scanning dashboard
           ### Required configuration when integrating with Fortify Hosted / Software Security Center & ScanCentral
           SSC_URL: https://forsechqbwyp.hqad.mtahq.org/ssc/                            # SSC URL
-          SSC_TOKEN: ffba4972-a213-4b97-9bd7-1ebd8d623f72                        # SSC CIToken or AutomationToken
-          SC_SAST_TOKEN: 2eaa7f9e-190c-4ea8-bd03-fe1baba719ef                # ScanCentral SAST client auth token
+          SSC_TOKEN: 07c8dadd-4fa6-4a14-9003-cf1ef3c07b1e      # SSC CIToken or AutomationToken  -t
+          SC_SAST_TOKEN: bc05fbf1-c605-49e3-b728-c8f6ef56c504   # ScanCentral SAST client auth token
+
+          # --ssc-url "${SSC_URL}" -t "${SSC_TOKEN}" -c "${SC_SAST_TOKEN}"
           # SC_SAST_SENSOR_VERSION: ${{vars.SC_SAST_SENSOR_VERSION}} # Sensor version on which to run the scan;
                                                                      # usually defined as organization or repo variable
           ### Optional configuration when integrating with Fortify Hosted / Software Security Center & ScanCentral
