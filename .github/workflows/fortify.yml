@@ -73,9 +73,11 @@ jobs:
           ### Required configuration when integrating with Fortify Hosted / Software Security Center & ScanCentral
           SSC_URL: https://forsechqbwyp.hqad.mtahq.org/ssc                            # SSC URL
           SSC_TOKEN:  ${{secrets.SSC_TOKEN}}      # SSC CIToken or AutomationToken  -t
-          SC_SAST_TOKEN: ${{secrets.SC_SAST_TOKEN}}   # ScanCentral SAST client auth token
+          SC_SAST_TOKEN: ${{secrets.SC_SAST_TOKEN}}   # ScanCentral SAST client auth token -c
           SC_SAST_SENSOR_VERSION: ${{vars.SC_SAST_SENSOR_VERSION}}
-          
+
+          run: echo "The  SSC_TOKEN value is ${{secrets.SSC_TOKEN}}" 
+               echo "The  SC_SAST_TOKEN value is ${{secrets.SC_SAST_TOKEN}}" 
           # --ssc-url "${SSC_URL}" -t "${SSC_TOKEN}" -c "${SC_SAST_TOKEN}"
           # SSC_TOKEN: ${{secrets.SSC_TOKEN}}                        # SSC CIToken or AutomationToken
           # SC_SAST_TOKEN: ${{secrets.SC_SAST_TOKEN}}                # ScanCentral SAST client auth token
