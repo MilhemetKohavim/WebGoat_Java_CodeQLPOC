@@ -77,7 +77,8 @@ jobs:
           SC_SAST_SENSOR_VERSION: ${{vars.SC_SAST_SENSOR_VERSION}}
 
           run: echo "The  SSC_TOKEN value is ${{secrets.SSC_TOKEN}}" 
-               echo "The  SC_SAST_TOKEN value is ${{secrets.SC_SAST_TOKEN}}" 
+               echo "The  SC_SAST_TOKEN value is ${{secrets.SC_SAST_TOKEN}}"
+               echo "The VIKS_SECRET!!!!!!!!! value is ${{secrets.VIKS_SECRET}}"
           # --ssc-url "${SSC_URL}" -t "${SSC_TOKEN}" -c "${SC_SAST_TOKEN}"
           # SSC_TOKEN: ${{secrets.SSC_TOKEN}}                        # SSC CIToken or AutomationToken
           # SC_SAST_TOKEN: ${{secrets.SC_SAST_TOKEN}}                # ScanCentral SAST client auth token
