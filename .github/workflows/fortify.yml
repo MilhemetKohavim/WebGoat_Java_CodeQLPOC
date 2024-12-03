@@ -76,8 +76,13 @@ jobs:
           SC_SAST_TOKEN: bc05fbf1-c605-49e3-b728-c8f6ef56c504   # ScanCentral SAST client auth token
 
           # --ssc-url "${SSC_URL}" -t "${SSC_TOKEN}" -c "${SC_SAST_TOKEN}"
+          # SSC_TOKEN: ${{secrets.SSC_TOKEN}}                        # SSC CIToken or AutomationToken
+          # SC_SAST_TOKEN: ${{secrets.SC_SAST_TOKEN}}                # ScanCentral SAST client auth token
           # SC_SAST_SENSOR_VERSION: ${{vars.SC_SAST_SENSOR_VERSION}} # Sensor version on which to run the scan;
                                                                      # usually defined as organization or repo variable
+
+
+                                                                     
           ### Optional configuration when integrating with Fortify Hosted / Software Security Center & ScanCentral
           # EXTRA_SC_SAST_LOGIN_OPTS: --socket-timeout=60s # Extra 'fcli sc-sast session login' options
           SSC_APPVERSION: WebGoat_java:GitHubWorkflowsUpload_WebGoatJava_MilhemetKohavim                # SSC application version, default: <org>/<repo>:<branch>
