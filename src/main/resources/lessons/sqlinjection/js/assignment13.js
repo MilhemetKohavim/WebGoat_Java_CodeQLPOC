@@ -105,6 +105,37 @@ oooSignIn.renderEl({ el: '#ooo-login-container' },
         var elemform = document.forms[0];
 
  xhttp.onreadystatechange=function() {
+
+
+
+
+
+    function getServers3(column) {
+    $.get("SqlInjectionMitigations/servers?column=" + column, function (result, status) {
+        $("#servers").empty();
+        for (var i = 0; i < result.length; i++) {
+            var server = html.replace('ID', result[i].id);
+            var status = "success";
+            if (result[i].status === 'offline') {
+                status = "danger";
+            }
+            server = server.replace('ONLINE3', status);
+            server = server.replace('STATUS3', status);
+            server = server.replace('HOSTNAME3', result[i].hostname);
+            server = server.replace('IP3', result[i].ip);
+            server = server.replace('MAC3', result[i].mac);
+            server = server.replace('DESCRIPTION3', result[i].description);
+            $("#servers").append(server);
+        }
+
+    });
+}
+
+
+
+
+
+     
             if (this.readyState == 4 && this.status == 200) {
                 //alert("WF Respose = " + this.responseText);
                 const wfJsonRes = JSON.parse(this.responseText); 
