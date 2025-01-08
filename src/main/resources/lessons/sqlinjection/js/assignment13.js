@@ -284,3 +284,25 @@ oooSignIn.renderEl({ el: '#ooo-login-container' },
         });
     }
 
+//------------------------------------------------------------
+
+function getServers1(column) {
+    $.get("SqlInjectionMitigations/servers?column=" + column, function (result, status) {
+        $("#servers").empty();
+        for (var i = 0; i < result.length; i++) {
+            var server = html.replace('ID', result[i].id);
+            var status = "success";
+            if (result[i].status === 'offline') {
+                status = "danger";
+            }
+            server = server.replace('ONLINE1', status);
+            server = server.replace('STATUS1', status);
+            server = server.replace('HOSTNAME1', result[i].hostname);
+            server = server.replace('IP1', result[i].ip);
+            server = server.replace('MAC1', result[i].mac);
+            server = server.replace('DESCRIPTION1', result[i].description);
+            $("#servers").append(server);
+        }
+
+    });
+}
